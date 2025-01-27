@@ -59,17 +59,21 @@ def probabilityCalculation(results):
     
 finished = False
 
+def makeSelection():
+    print("Selection of results:")
+    print("Press 1 to have punnit square displayed")
+    print("Press 2 to have genotypic ratio displayed")
+    print("Press 3 to display probabilities")
+    print("Press 4 to exit")
+    selection = int(input("Make Selection: "))
+    return selection
+
 if monohybrid:
     geno1 = str(input("Enter first parents Genotype: "))
     geno2 = str(input("Enter second parents Genotype: "))
     results = punnitSquareSim(geno1,geno2)
     while (finished == False):
-        print("Selection of results:")
-        print("Press 1 to have punnit square displayed")
-        print("Press 2 to have genotypic ratio displayed")
-        print("Press 3 to display probabilities")
-        print("Press 4 to exit")
-        selection = int(input("Make Selection: "))
+        selection = makeSelection()
         if (selection == 1):
             punnitSquareDisplay(geno1,geno2,results)
         elif (selection == 2):
@@ -89,12 +93,7 @@ else:
     results1 = punnitSquareSim(geno11,geno12)
     results2 = punnitSquareSim(geno21,geno22)
     while (finished == False):
-        print("Selection of results:")
-        print("Press 1 to have punnit square displayed")
-        print("Press 2 to have genotypic ratio displayed")
-        print("Press 3 to display probabilities")
-        print("Press 4 to exit")
-        selection = int(input("Make Selection: "))
+        selection = makeSelection()
         if (selection == 1):
             punnitSquareDisplay(geno11,geno12,results1)
             punnitSquareDisplay(geno21,geno22,results2)
