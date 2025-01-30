@@ -69,8 +69,24 @@ def makeSelection():
     return selection
 
 if monohybrid:
-    geno1 = str(input("Enter first parents Genotype: "))
-    geno2 = str(input("Enter second parents Genotype: "))
+    valid = False
+    while valid != True:
+        geno1 = str(input("Enter first parents Genotype: "))
+        if len(geno1) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+
+    valid = False
+    while valid != True:
+        geno2 = str(input("Enter second parents Genotype: "))
+        if len(geno2) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+            
     results = punnitSquareSim(geno1,geno2)
     while (finished == False):
         selection = makeSelection()
@@ -86,10 +102,39 @@ if monohybrid:
             finished = True
             print("Thank you for using!")
 else:
-    geno11 = str(input("Enter first parents first Genotype: "))
-    geno12 = str(input("Enter second parents firstGenotype: "))
-    geno21 = str(input("Enter first parents second Genotype: "))
-    geno22 = str(input("Enter second parents second Genotype: "))
+    valid = False
+    while valid != True:
+        geno11 = str(input("Enter first parents first Genotype: "))
+        if len(geno11) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+    valid = False
+    while valid != True:
+        geno12 = str(input("Enter second parents firstGenotype: "))
+        if len(geno12) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+    valid = False
+    while valid != True:
+        geno21 = str(input("Enter first parents second Genotype: "))
+        if len(geno21) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+    valid = False
+    while valid != True:
+        geno22 = str(input("Enter second parents second Genotype: "))
+        if len(geno22) == 2:
+            valid = True
+        else:
+            print("Invalid Genotype, please enter 2 characters")
+
+
     results1 = punnitSquareSim(geno11,geno12)
     results2 = punnitSquareSim(geno21,geno22)
     while (finished == False):
